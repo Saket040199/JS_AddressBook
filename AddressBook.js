@@ -74,10 +74,12 @@ class AddressBook{
                 " Email: "+this.email;
      }
     }
+    let addressBookArray= new Array();
     try{
 
-     let addressBookData= new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhayaP",471001,7987469952,"saket420@gmail.com");
-     console.log(addressBookData.toString());
+      addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhayaP",471001,7987469952,"saket420@gmail.com"));
+      addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
+     console.log(addressBookArray);
     }catch (e){
         console.log(e);
     }
