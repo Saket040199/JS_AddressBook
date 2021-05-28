@@ -77,7 +77,7 @@ class AddressBook{
     let addressBookArray= new Array();
     try{
 
-      addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhayaP",471001,7987469952,"saket420@gmail.com"));
+      addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhyaP",471001,7987469952,"saket420@gmail.com"));
       addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
         console.log(addressBookArray);
         searchContactByCitAndyState("Farzan","chhatarpur","madhyapradesh");
@@ -89,6 +89,10 @@ class AddressBook{
         console.log(addressBookArray);
         getCount();
         checkDuplicateConatct("Saket");
+        console.log("Show AddressBooks in City Chhatarpur");
+        viewByCity("Chhatarpur");
+        console.log("Show AddressBooks of State MadhyaP");
+        viewByState("MadhyaP");
     }catch (e){
         console.log(e);
     }
@@ -150,3 +154,11 @@ class AddressBook{
     
     }
     
+    function viewByCity(city){
+        addressBookArray.filter(contact=>contact.city==city).forEach(contact=>console.log(contact))
+    }
+    
+    function viewByState(state){
+        addressBookArray.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
+    }
+  
