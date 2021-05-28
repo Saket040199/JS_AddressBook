@@ -78,13 +78,13 @@ class AddressBook{
     try{
 
       addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhyaP",471001,7987469952,"saket420@gmail.com"));
-      addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
+      addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "Chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
         console.log(addressBookArray);
         searchContactByCitAndyState("Farzan","chhatarpur","madhyapradesh");
         searchByNameAndEdit("Saket","Abhishek");
         console.log(addressBookArray);
         getCount();
-        searchByNameAndDelete("Farzan");
+       // searchByNameAndDelete("Farzan");
         console.log("AddressBook After Addition and Deletion");
         console.log(addressBookArray);
         getCount();
@@ -93,6 +93,7 @@ class AddressBook{
         viewByCity("Chhatarpur");
         console.log("Show AddressBooks of State MadhyaP");
         viewByState("MadhyaP");
+        getCountByCityState("Chhatarpur");
     }catch (e){
         console.log(e);
     }
@@ -162,3 +163,9 @@ class AddressBook{
         addressBookArray.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
     }
   
+    function getCountByCityState(cityOrState){
+        let count = 0;
+        addressBookArray.filter(contact=>contact.city==cityOrState).forEach(contact=>++count);
+        addressBookArray.filter(contact=>contact.state==cityOrState).forEach(contact=>++count);
+        console.log("Count by City or State are: "+count);
+    }
