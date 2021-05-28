@@ -79,8 +79,11 @@ class AddressBook{
 
       addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhayaP",471001,7987469952,"saket420@gmail.com"));
       addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
-     console.log(addressBookArray);
-     searchByNameAndEdit("Saket","Abhishek");
+        console.log(addressBookArray);
+        searchByNameAndEdit("Saket","Abhishek");
+        console.log(addressBookArray);
+        searchByNameAndDelete("Farzan");
+        console.log("AddressBook After Addition and Deletion");
         console.log(addressBookArray);
     }catch (e){
         console.log(e);
@@ -99,4 +102,13 @@ class AddressBook{
        }
     }
     
-
+    function searchByNameAndDelete(firstname)
+    {
+     for(contact of addressBookArray){
+         if(contact.firstname == firstname)
+         {
+           addressBookArray.pop(contact)
+         }  
+       }
+    }
+    
