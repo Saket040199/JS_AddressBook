@@ -94,6 +94,7 @@ class AddressBook{
         console.log("Show AddressBooks of State MadhyaP");
         viewByState("MadhyaP");
         getCountByCityState("Chhatarpur");
+        sortAddressBook();
     }catch (e){
         console.log(e);
     }
@@ -169,3 +170,9 @@ class AddressBook{
         addressBookArray.filter(contact=>contact.state==cityOrState).forEach(contact=>++count);
         console.log("Count by City or State are: "+count);
     }
+
+    function sortAddressBook(){
+        let sortedArray= addressBookArray.sort();
+        console.log("The sorted AddressBooks are: ");
+        console.log(sortedArray);
+      }
