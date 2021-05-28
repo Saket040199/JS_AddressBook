@@ -87,6 +87,7 @@ class AddressBook{
         console.log("AddressBook After Addition and Deletion");
         console.log(addressBookArray);
         getCount();
+        checkDuplicateConatct("Saket");
     }catch (e){
         console.log(e);
     }
@@ -119,4 +120,17 @@ class AddressBook{
     
     function getCount(){
         console.log("Contacts : "+addressBookArray.reduce(count,0)+"\n");
+    }
+
+    function checkDuplicateConatct(firstname)
+    {
+        console.log("New Name: "+firstname);
+        let d =  addressBookArray.filter(contact=>contact.firstname==firstname )
+                                 .map(contact => contact.firstName.toString() )
+              if(d.length >0)
+              {
+              console.log("\t"+firstname + " " +  "Already Exists! Please Choose Different Name");
+              }
+              else
+              console.log(firstname + " "+"Doesnt Exist \n   You can create a AddressBook by Using "+firstname)
     }
