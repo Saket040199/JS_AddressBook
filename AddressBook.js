@@ -80,6 +80,7 @@ class AddressBook{
       addressBookArray.push(new AddressBook("Saket","Jain","panna naka","Chhatarpur","MadhayaP",471001,7987469952,"saket420@gmail.com"));
       addressBookArray.push(new AddressBook("Farzan","Ullah","kotwali", "chhatarpur","madhyapradesh",471001,7954861245,"farzan444@gmail.com"));
         console.log(addressBookArray);
+        searchContactByCitAndyState("Farzan","chhatarpur","madhyapradesh");
         searchByNameAndEdit("Saket","Abhishek");
         console.log(addressBookArray);
         getCount();
@@ -134,3 +135,18 @@ class AddressBook{
               else
               console.log(firstname + " "+"Doesnt Exist \n   You can create a AddressBook by Using "+firstname)
     }
+
+    function searchContactByCitAndyState(firstname,city,state){
+        let citySearch=addressBookArray.filter(contacts => contacts.firstname == firstname && contacts.city == city).toString();
+        let stateSearch=addressBookArray.filter(contacts => contacts.firstname == firstname && contacts.state == state).toString();
+        
+        if (citySearch.length >0 && stateSearch.length >0){
+           
+            console.log("Contact Match "+firstname);
+            
+        }else{
+            console.log(" Contact not Match! Please give proper city and state");
+        }
+    
+    }
+    
