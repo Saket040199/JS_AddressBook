@@ -82,9 +82,11 @@ class AddressBook{
         console.log(addressBookArray);
         searchByNameAndEdit("Saket","Abhishek");
         console.log(addressBookArray);
+        getCount();
         searchByNameAndDelete("Farzan");
         console.log("AddressBook After Addition and Deletion");
         console.log(addressBookArray);
+        getCount();
     }catch (e){
         console.log(e);
     }
@@ -111,4 +113,10 @@ class AddressBook{
          }  
        }
     }
+    function count(contactCount){
+        return ++contactCount;
+    }
     
+    function getCount(){
+        console.log("Contacts : "+addressBookArray.reduce(count,0)+"\n");
+    }
